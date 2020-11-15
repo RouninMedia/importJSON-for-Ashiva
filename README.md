@@ -6,27 +6,23 @@
 
 Unlike `requestRemoteResponse()`, its general-purpose counterpart, `importJSON()` is exclusively focused on importing JSON files.
 
-Additionally, despite sharing a similar syntax with its counterpart, `importJSON` is largely synchronous, includes offline capability and site-wide scope.
+Additionally, despite sharing a similar syntax with its counterpart, `importJSON()` is largely synchronous, includes offline capability and site-wide scope.
 
-## Comparing `importJSON` and `requestRemoteResponse`, side-by-side:
+## Comparing `importJSON()` and `requestRemoteResponse()`, side-by-side:
     
 **General Purpose:** `requestRemoteResponse('/.assets/content/pages/about-us/page.json', buildParagraph, {color: 'rgb(0, 125, 0)'});`
 
 **JSON only:** `importJSON('/.assets/content/pages/about-us/page.json', buildParagraph, {color: 'rgb(0, 125, 0)'});`
 
-## Notable differences between `importJSON` and `requestRemoteResponse`:
+## Notable differences between `importJSON()` and `requestRemoteResponse()`:
 
- - `importJSON` uses **Fetch API**, while `requestRemoteResponse` uses **XHR2**
- - `importJSON` not only uses **Fetch API**, but does so with **ES2017** `async` / `await` syntax
- - `importJSON` only fetches asynchronously from the server once, after which it retrieves JSON from `localStorage` (until the `localStorage` entry is refreshed)
+ - `importJSON()` uses **Fetch API**, while `requestRemoteResponse()` uses **XHR2**
+ - `importJSON()` not only uses **Fetch API**, but does so with **ES2017** `async` / `await` syntax
+ - `importJSON()` only fetches asynchronously from the server once, after which it retrieves JSON from `localStorage` (until the `localStorage` entry is refreshed)
  -
  -
  -
     
- ## Similarities between `importJSON` and `requestRemoteResponse`:
+ ## Similarities between `importJSON()` and `requestRemoteResponse()`:
  
-  - Both `importJSON` and `requestRemoteResponse` take **Callback Functions**
-
-
-
-
+  - Both `importJSON()` and `requestRemoteResponse()` take **Callback Functions**
