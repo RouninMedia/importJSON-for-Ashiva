@@ -28,16 +28,16 @@ Additionally, despite sharing a similar syntax with its counterpart, `importJSON
  
  - `importJSON()` fetches **JSON** asynchronously from the server _only once_, after which it repeatedly retrieves **JSON** from `localStorage` (until the `localStorage` entry is refreshed); in contrast `requestRemoteResponse()` _always_ makes an asynchronous request to the server
  
- -
- 
- -
  
  ## Advantages of `requestRemoteResponse()` over `importJSON()`:
  
  - `requestRemoteResponse()` may request any type of file, while `importJSON()` is designed to fetch only **JSON** files
+ 
  - `requestRemoteResponse()` may request any _dynamic_ files, while `importJSON()` is designed to fetch only _static_ files
+ 
  - `requestRemoteResponse()` may initiate server-side processes, while `importJSON()` is designed to fetch only _static_ **JSON** files
+ 
     
  ## Similarities between `importJSON()` and `requestRemoteResponse()`:
  
-  - Both `importJSON()` and `requestRemoteResponse()` take **Callback Functions**
+  - Both `importJSON()` and `requestRemoteResponse()` employ **Callback Functions**
