@@ -12,11 +12,19 @@ Additionally, despite sharing a similar syntax with its counterpart, `importJSON
     
 ### General Purpose:
 
-    requestRemoteResponse('/.assets/content/pages/about-us/page.json', buildParagraph, {color: 'rgb(0, 125, 0)'});
+    requestRemoteResponse(
+      '/.assets/content/pages/about-us/page.json',
+      buildParagraph,
+      {color: 'rgb(0, 125, 0)'}
+    );
 
 ### JSON only:
 
-    importJSON('/.assets/content/pages/about-us/page.json', buildParagraph, {color: 'rgb(0, 125, 0)'});
+    importJSON(
+      '/.assets/content/pages/about-us/page.json',
+      buildParagraph,
+      {color: 'rgb(0, 125, 0)'}
+    );
 
 ## Advantages of `importJSON()` over `requestRemoteResponse()`:
 
