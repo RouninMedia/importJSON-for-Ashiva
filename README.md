@@ -39,7 +39,7 @@ function importJSON(filepath, callback, parameters = {}) {
   const storedJSON = localStorage.getItem(jsonStorageKey);
 
   const timeStamp = localStorage.getItem(jsonStorageKey + '::Timestamp');
-  const timeLimit = (1000 * 60); // (1000 * 60 * 60 * 24 * 7);
+  const timeLimit = (1000 * 60 * 60 * 24 * 7);
   const timeElapsed = (Date.now() - timeStamp);
 
 
