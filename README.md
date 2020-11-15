@@ -14,14 +14,25 @@ Additionally, despite sharing a similar syntax with its counterpart, `importJSON
 
 **JSON only:** `importJSON('/.assets/content/pages/about-us/page.json', buildParagraph, {color: 'rgb(0, 125, 0)'});`
 
-## Notable differences between `importJSON()` and `requestRemoteResponse()`:
+## Advantages of `importJSON()` over `requestRemoteResponse()`:
+
+ - `importJSON()` has a degree of offline capability while `requestRemoteResponse()` lacks any offline capability
 
  - `importJSON()` uses **Fetch API**, while `requestRemoteResponse()` uses **XHR2**
+ 
  - `importJSON()` not only uses **Fetch API**, but does so with **ES2017** `async` / `await` syntax
- - `importJSON()` only fetches asynchronously from the server once, after which it retrieves JSON from `localStorage` (until the `localStorage` entry is refreshed)
+ 
+ - `importJSON()` fetches **JSON** asynchronously from the server _only once_, after which it repeatedly retrieves **JSON** from `localStorage` (until the `localStorage` entry is refreshed); in contrast `requestRemoteResponse()` _always_ makes an asynchronous request to the server
+ 
  -
+ 
  -
- -
+ 
+ ## Advantages of `requestRemoteResponse()` over `importJSON()`:
+ 
+ - `requestRemoteResponse()` may request any type of file, while `importJSON()` is designed to fetch only **JSON** files
+ - `requestRemoteResponse()` may request any _dynamic_ files, while `importJSON()` is designed to fetch only _static_ files
+ - `requestRemoteResponse()` may initiate server-side processes, while `importJSON()` is designed to fetch only _static_ **JSON** files
     
  ## Similarities between `importJSON()` and `requestRemoteResponse()`:
  
