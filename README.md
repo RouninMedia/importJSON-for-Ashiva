@@ -1,10 +1,10 @@
-# importJSON for Ashiva
+# `importJSON()` for Ashiva
 
-`importJSON` is a core component for **Ashiva**.
+`importJSON()` is a core component for **Ashiva**.
 
 **Ashiva** employs a _JSON-everywhere_ approach to storing data, so it benefits from having a fast, standard library approach for importing individual JSON files.
 
-Unlike `requestRemoteResponse`, its general-purpose counterpart, `importJSON` is exclusively focused on importing JSON files.
+Unlike `requestRemoteResponse()`, its general-purpose counterpart, `importJSON()` is exclusively focused on importing JSON files.
 
 Additionally, despite sharing a similar syntax with its counterpart, `importJSON` is largely synchronous, includes offline capability and site-wide scope.
 
