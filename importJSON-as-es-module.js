@@ -49,10 +49,12 @@ const importJSON = (filepath, callback, parameters = {}) => {
 export { importJSON };
 
 
+<?php
 
+echo '
 <script type="module">
 
-import { importJSON } from \'/json-import-test-3.js\';
+import { importJSON } from \'/importjson-as-es-module.js\';
 
 const buildParagraphParameters = {color: \'rgba(255, 255, 255, 0.1)\'};
 
@@ -67,3 +69,6 @@ function buildParagraph(targetJSON, parameters) {
 
 importJSON(\'/.assets/content/pages/'.url($Page).'/page.json\', buildParagraph, buildParagraphParameters);
 </script>
+';
+            
+?>
