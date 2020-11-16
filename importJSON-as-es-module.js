@@ -49,6 +49,8 @@ const importJSON = (filepath, callback, parameters = {}) => {
 export { importJSON };
 
 
+// WORKING EXAMPLE:
+
 <?php
 
 echo '
