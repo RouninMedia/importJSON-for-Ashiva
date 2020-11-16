@@ -1,7 +1,3 @@
-  //*************//
- // IMPORT JSON //
-//*************//
-
 async function fetchJSON(jsonStorageKey) {
 
   const filepath = '/.assets/' + url(jsonStorageKey.replace('importJSON::', '')) + '.json';
@@ -48,6 +44,8 @@ function importJSON(filepath, callback, parameters = {}) {
     });
   }
 }
+
+
 
 
 // WORKING EXAMPLE:
