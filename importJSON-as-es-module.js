@@ -52,12 +52,12 @@ function importJSON(filepath, callback, parameters = {}) {
 
 const buildParagraphParameters = {color: 'rgb(0, 125, 0)'};
 
-function buildParagraph(JSON, parameters) {
+function buildParagraph(targetJSON, parameters) {
 
   let paragraph = document.createElement('p');
   parameters.color = (parameters.fetched) ? 'rgb(255, 0, 0)' : parameters.color;
   paragraph.style.color = parameters.color;
-  paragraph.textContent = JSON;
+  paragraph.textContent = targetJSON;
 
   document.body.appendChild(paragraph);
 }
