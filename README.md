@@ -43,13 +43,13 @@ function importJSON(filepath, callback, parameters = {}) {
   const timeElapsed = (Date.now() - timeStamp);
 
 
-  // RETRIEVE FROM LOCALSTORAGE IF ENTRY EXISTS AND TIME LIMIT HAS NOT PASSED
+  // RETRIEVE JSON FROM LOCALSTORAGE (IF ENTRY & TIME LIMIT PERMIT) 
   if ((storedJSON !== null) && (timeElapsed < timeLimit)) {
 
     return callback(storedJSON, parameters);
   }
 
-  // FETCH JSON
+  // ELSE FETCH JSON
   else {
 
     fetchJSON(jsonStorageKey);
