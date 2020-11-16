@@ -50,9 +50,7 @@ function importJSON(filepath, callback, parameters = {}) {
 }
 
 
- //*******************//
-//*******************//
-
+// WORKING EXAMPLE:
 
 const buildParagraphParameters = {color: 'rgb(0, 125, 0)'};
 
