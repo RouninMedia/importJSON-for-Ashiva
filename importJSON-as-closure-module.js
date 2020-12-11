@@ -58,6 +58,7 @@ const ashiva = (() => {
     // RETRIEVE JSON FROM LOCALSTORAGE (IF ENTRY & TIME LIMIT PERMIT) 
     if ((storedJSON !== null) && (timeElapsed < importJSONProperties.timeLimit)) {
 
+      parameters.origin = 'local';
       return callback(storedJSON, parameters);
     }
 
@@ -69,9 +70,7 @@ const ashiva = (() => {
       window.addEventListener('storeJSON', () => {
 
         const newStoredJSON = localStorage.getItem(jsonStorageKey);
-
-        parameters.fetched = true;
-
+        parameters.origin = 'remote';
         return callback(newStoredJSON, parameters);
       });
     }
@@ -91,7 +90,7 @@ const buildParagraphParameters = {color: 'rgb(0, 125, 0)'};
 function buildParagraph(targetJSON, parameters) {
 
   let paragraph = document.createElement('p');
-  parameters.color = (parameters.fetched) ? 'rgb(255, 0, 0)' : parameters.color;
+  parameters.color = (parameters.origin === 'remote') ? 'rgb(255, 0, 0)' : parameters.color;
   paragraph.style.color = parameters.color;
   paragraph.textContent = targetJSON;
 
