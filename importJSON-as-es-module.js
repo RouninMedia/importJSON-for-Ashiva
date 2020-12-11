@@ -25,7 +25,8 @@ const importJSON = (filepath, callback, parameters = {}) => {
 
   // RETRIEVE JSON FROM LOCALSTORAGE (IF ENTRY & TIME LIMIT PERMIT) 
   if ((storedJSON !== null) && (timeElapsed < timeLimit)) {
-
+    
+    parameters.origin = 'local';
     return callback(storedJSON, parameters);
   }
 
@@ -37,9 +38,7 @@ const importJSON = (filepath, callback, parameters = {}) => {
     window.addEventListener('storeJSON', () => {
 
       const newStoredJSON = localStorage.getItem(jsonStorageKey);
-
-      parameters.fetched = true;
-
+      parameters.origin = 'remote';
       return callback(newStoredJSON, parameters);
     });
   }
@@ -63,7 +62,7 @@ const buildParagraphParameters = {color: \'rgba(255, 255, 255, 0.1)\'};
 function buildParagraph(targetJSON, parameters) {
 
   let paragraph = document.createElement(\'p\');
-  parameters.color = (parameters.fetched) ? \'rgba(255, 255, 255, 0.5)\' : parameters.color;
+  parameters.color = (parameters.origin === 'remote') ? \'rgba(255, 255, 255, 0.5)\' : parameters.color;
   paragraph.style.color = parameters.color;
   paragraph.textContent = JSON.parse(targetJSON).Document_Overview.Editorial_Elements.Page_Heading;
   document.body.appendChild(paragraph);
