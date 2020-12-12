@@ -26,7 +26,7 @@ function importJSON(filepath, callback, parameters = {}) {
   // RETRIEVE JSON FROM LOCALSTORAGE (IF ENTRY & TIME LIMIT PERMIT) 
   if ((storedJSON !== null) && (timeElapsed < timeLimit)) {
     
-    parameters.origin = 'local';
+    parameters.importJSONOrigin = 'local';
     return callback(storedJSON, parameters);
   }
 
@@ -38,7 +38,7 @@ function importJSON(filepath, callback, parameters = {}) {
     window.addEventListener('storeJSON', () => {
 
       const newStoredJSON = localStorage.getItem(jsonStorageKey);
-      parameters.origin = 'remote';
+      parameters.importJSONOrigin = 'remote';
       return callback(newStoredJSON, parameters);
     });
   }
