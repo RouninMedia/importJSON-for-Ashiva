@@ -54,7 +54,7 @@ const buildParagraphParameters = {color: 'rgb(0, 125, 0)'};
 function buildParagraph(targetJSON, parameters) {
 
   let paragraph = document.createElement('p');
-  parameters.color = (parameters.origin === 'remote') ? 'rgb(255, 0, 0)' : parameters.color;
+  parameters.color = (parameters.importJSONOrigin === 'remote') ? 'rgb(255, 0, 0)' : parameters.color;
   paragraph.style.color = parameters.color;
   paragraph.textContent = targetJSON;
 
